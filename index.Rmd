@@ -11,14 +11,14 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-* An example presentation, created in [R Studio](rstudio), with [R Markdown](rmarkdown) and [slidify](slidify). View the source file [here](source).
+* An example presentation, created in [R Studio](http://www.rstudio.com/), with [R Markdown](http://rmarkdown.rstudio.com/) and [slidify](http://slidify.github.io/). View the source file [here](https://github.com/mvuorre/presentation-template/tree/gh-pages).
 
-> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
+> * Clone this repository for easy authoring of presentations from R Studio.
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
-> * Detailed instructions are in the [readme](readme) file of this repository.
+> * Detailed instructions are in the [readme](https://github.com/mvuorre/presentation-template) file of this repository.
 
 ---
-
+## Options
 * The first code block will load libraries, set options for chunks, xtable and so forth.
 ```{r prep}
 library(ggplot2); library(xtable); library(slidify)
@@ -26,12 +26,13 @@ library(knitr)
 opts_chunk$set(tidy = TRUE, results = 'asis', message = FALSE, 
                prompt = TRUE, dev.args=list(bg="transparent"), dpi=150,
                fig.align='center')
-options(xtable.comment = FALSE) # xtable generates ugly comments by default
+options(xtable.comment = FALSE, xtable.size = 10,
+        xtable.type = "html") # xtable generates ugly comments by default
 ```
 
 ---
 
-## Write a script in R Markdown
+## Writing the script
 * Because this script is about itself, so is the data. I would like to know about the frequency of different letters in this script. 
 
 ```{r getLetters, results='asis', warning=FALSE}
@@ -39,7 +40,7 @@ con = file("index.Rmd", open="r")
 letters = toupper(unlist(strsplit(readLines(con), ""))); close(con)
 letters = as.data.frame(table(gsub("[[:punct:], [:blank:], [:digit:]]", 
                                 replacement = "", letters)))[-1,]
-print(xtable(head(letters)), type = "html", include.rownames=F, width=4)
+print(xtable(head(letters)), include.rownames=F)
 ```
 
 ---
@@ -68,10 +69,3 @@ publish_github("presentation-template", "mvuorre")
 > * It takes a few seconds for Github to refresh the page
 > * The source code for the presentation is [here](source)
 > * Note that the presentation is in the gh-pages branch on Github, not the master branch
-
-
-[rstudio]: http://www.rstudio.com/
-[rmarkdown]: http://rmarkdown.rstudio.com/
-[slidify]: http://slidify.github.io/
-[source]: http://mvuorre.github.io/presentation-template/presentation/index.Rmd
-[readme]: https://github.com/mvuorre/presentation-template/tree/gh-pages

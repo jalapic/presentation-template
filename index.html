@@ -44,13 +44,13 @@
     <slide class="" id="slide-1" style="background:;">
   <article data-timings="">
     <ul>
-<li>An example presentation, created in <a href="rstudio">R Studio</a>, with <a href="rmarkdown">R Markdown</a> and <a href="slidify">slidify</a>. View the source file <a href="source">here</a>.</li>
+<li>An example presentation, created in <a href="http://www.rstudio.com/">R Studio</a>, with <a href="http://rmarkdown.rstudio.com/">R Markdown</a> and <a href="http://slidify.github.io/">slidify</a>. View the source file <a href="https://github.com/mvuorre/presentation-template/tree/gh-pages">here</a>.</li>
 </ul>
 
 <ul class = "build incremental">
-<li>Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.<br></li>
+<li>Clone this repository for easy authoring of presentations from R Studio.</li>
 <li>This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.</li>
-<li>Detailed instructions are in the <a href="readme">readme</a> file of this repository.</li>
+<li>Detailed instructions are in the <a href="https://github.com/mvuorre/presentation-template">readme</a> file of this repository.</li>
 </ul>
 
   </article>
@@ -58,6 +58,9 @@
 </slide>
 
 <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Options</h2>
+  </hgroup>
   <article data-timings="">
     <ul>
 <li>The first code block will load libraries, set options for chunks, xtable and so forth.</li>
@@ -69,7 +72,7 @@
 &gt; library(knitr)
 &gt; opts_chunk$set(tidy = TRUE, results = &quot;asis&quot;, message = FALSE, prompt = TRUE, 
 +     dev.args = list(bg = &quot;transparent&quot;), dpi = 150, fig.align = &quot;center&quot;)
-&gt; options(xtable.comment = FALSE)  # xtable generates ugly comments by default
+&gt; options(xtable.comment = FALSE, xtable.size = 10, xtable.type = &quot;html&quot;)  # xtable generates ugly comments by default
 </code></pre>
 
   </article>
@@ -78,7 +81,7 @@
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Write a script in R Markdown</h2>
+    <h2>Writing the script</h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -90,17 +93,17 @@
 &gt; close(con)
 &gt; letters = as.data.frame(table(gsub(&quot;[[:punct:], [:blank:], [:digit:]]&quot;, replacement = &quot;&quot;, 
 +     letters)))[-1, ]
-&gt; print(xtable(head(letters)), type = &quot;html&quot;, include.rownames = F, width = 4)
+&gt; print(xtable(head(letters)), include.rownames = F)
 </code></pre>
 
 <table border=1>
 <tr> <th> Var1 </th> <th> Freq </th>  </tr>
-  <tr> <td> A </td> <td align="right"> 149 </td> </tr>
-  <tr> <td> B </td> <td align="right">  43 </td> </tr>
-  <tr> <td> C </td> <td align="right">  57 </td> </tr>
-  <tr> <td> D </td> <td align="right">  79 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 277 </td> </tr>
-  <tr> <td> F </td> <td align="right">  58 </td> </tr>
+  <tr> <td> A </td> <td align="right"> 142 </td> </tr>
+  <tr> <td> B </td> <td align="right">  45 </td> </tr>
+  <tr> <td> C </td> <td align="right">  56 </td> </tr>
+  <tr> <td> D </td> <td align="right">  65 </td> </tr>
+  <tr> <td> E </td> <td align="right"> 270 </td> </tr>
+  <tr> <td> F </td> <td align="right">  55 </td> </tr>
    </table>
 
   </article>
@@ -123,7 +126,7 @@
 +     color = &quot;transparent&quot;))
 </code></pre>
 
-<p><img src="assets/fig/plotLetters.png" alt="plot of chunk plotLetters"> </p>
+<p><img src="assets/fig/plotLetters.png" title="plot of chunk plotLetters" alt="plot of chunk plotLetters" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -165,13 +168,13 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title=''>
+        data-slide=2 title='Options'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Write a script in R Markdown'>
+        data-slide=3 title='Writing the script'>
          3
       </a>
     </li>

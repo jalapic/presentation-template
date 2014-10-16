@@ -11,14 +11,14 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-* An example presentation, created in [R Studio](rstudio), with [R Markdown](rmarkdown) and [slidify](slidify). View the source file [here](source).
+* An example presentation, created in [R Studio](http://www.rstudio.com/), with [R Markdown](http://rmarkdown.rstudio.com/) and [slidify](http://slidify.github.io/). View the source file [here](https://github.com/mvuorre/presentation-template/tree/gh-pages).
 
-> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
+> * Clone this repository for easy authoring of presentations from R Studio.
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
-> * Detailed instructions are in the [readme](readme) file of this repository.
+> * Detailed instructions are in the [readme](https://github.com/mvuorre/presentation-template) file of this repository.
 
 ---
-
+## Options
 * The first code block will load libraries, set options for chunks, xtable and so forth.
 
 ```r
@@ -28,12 +28,12 @@ knit        : slidify::knit2slides
 > library(knitr)
 > opts_chunk$set(tidy = TRUE, results = "asis", message = FALSE, prompt = TRUE, 
 +     dev.args = list(bg = "transparent"), dpi = 150, fig.align = "center")
-> options(xtable.comment = FALSE)  # xtable generates ugly comments by default
+> options(xtable.comment = FALSE, xtable.size = 10, xtable.type = "html")  # xtable generates ugly comments by default
 ```
 
 ---
 
-## Write a script in R Markdown
+## Writing the script
 * Because this script is about itself, so is the data. I would like to know about the frequency of different letters in this script. 
 
 
@@ -43,17 +43,17 @@ knit        : slidify::knit2slides
 > close(con)
 > letters = as.data.frame(table(gsub("[[:punct:], [:blank:], [:digit:]]", replacement = "", 
 +     letters)))[-1, ]
-> print(xtable(head(letters)), type = "html", include.rownames = F, width = 4)
+> print(xtable(head(letters)), include.rownames = F)
 ```
 
 <table border=1>
 <tr> <th> Var1 </th> <th> Freq </th>  </tr>
-  <tr> <td> A </td> <td align="right"> 149 </td> </tr>
-  <tr> <td> B </td> <td align="right">  43 </td> </tr>
-  <tr> <td> C </td> <td align="right">  57 </td> </tr>
-  <tr> <td> D </td> <td align="right">  79 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 277 </td> </tr>
-  <tr> <td> F </td> <td align="right">  58 </td> </tr>
+  <tr> <td> A </td> <td align="right"> 142 </td> </tr>
+  <tr> <td> B </td> <td align="right">  45 </td> </tr>
+  <tr> <td> C </td> <td align="right">  56 </td> </tr>
+  <tr> <td> D </td> <td align="right">  65 </td> </tr>
+  <tr> <td> E </td> <td align="right"> 270 </td> </tr>
+  <tr> <td> F </td> <td align="right">  55 </td> </tr>
    </table>
 
 ---
@@ -69,7 +69,7 @@ knit        : slidify::knit2slides
 +     color = "transparent"))
 ```
 
-![plot of chunk plotLetters](assets/fig/plotLetters.png) 
+<img src="assets/fig/plotLetters.png" title="plot of chunk plotLetters" alt="plot of chunk plotLetters" style="display: block; margin: auto;" />
 
 ---
 
@@ -85,10 +85,3 @@ knit        : slidify::knit2slides
 > * It takes a few seconds for Github to refresh the page
 > * The source code for the presentation is [here](source)
 > * Note that the presentation is in the gh-pages branch on Github, not the master branch
-
-
-[rstudio]: http://www.rstudio.com/
-[rmarkdown]: http://rmarkdown.rstudio.com/
-[slidify]: http://slidify.github.io/
-[source]: http://mvuorre.github.io/presentation-template/presentation/index.Rmd
-[readme]: https://github.com/mvuorre/presentation-template/tree/gh-pages
