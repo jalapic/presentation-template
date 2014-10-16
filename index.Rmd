@@ -11,7 +11,7 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-* An example presentation, created in [R Studio][rstudio], with [R Markdown][rmarkdown] and [slidify][slidify]. View the source file [here][source].
+* An example presentation, created in [R Studio](rstudio), with [R Markdown](rmarkdown) and [slidify][slidify]. View the source file [here][source].
 
 ---
 
