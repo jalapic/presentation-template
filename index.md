@@ -15,6 +15,12 @@ knit        : slidify::knit2slides
 
 ---
 
+> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
+> * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
+> * Detailed instructions are in the [readme](https://github.com/mvuorre/presentation-template) file of this repository.
+
+---
+
 * The first code block will load libraries, set options for chunks, xtable and so forth.
 
 ```r
@@ -26,10 +32,6 @@ knit        : slidify::knit2slides
 +     dev.args = list(bg = "transparent"))
 > options(xtable.comment = FALSE)  # xtable generates ugly comments by default
 ```
-
-> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
-> * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
-> * Detailed instructions are in the readme file of this repository.
 
 ---
 
@@ -83,6 +85,7 @@ knit        : slidify::knit2slides
 ```
 
 * You can now access the presentation at [http://mvuorre.github.io/presentation-template/](http://mvuorre.github.io/presentation-template/)
+* It takes a few seconds for Github to refresh the page
 
 
 [rstudio]: http://www.rstudio.com/
