@@ -3,7 +3,7 @@ title       : Presentation template
 subtitle    : Create presentations from R Studio
 author      : Matti
 job         : 
-framework   : html5slides        # {io2012, html5slides, shower, dzslides, ...}
+framework   : shower        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
@@ -15,7 +15,7 @@ knit        : slidify::knit2slides
 
 ---
 
-> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
+* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 > * Detailed instructions are in the [readme](readme) file of this repository.
 
