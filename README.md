@@ -2,6 +2,7 @@ presentation-template
 =====================
 
 A template for creating presentations from R Markdown scripts, using R Studio, slidify and knitr.
+View an [example presentation](http://mvuorre.github.io/presentation-template) created with this template.
 
 ## Why have a template
 Using slidify is easy, once you have figured out Github and R Markdown. However, starting from scratch each time you want to build a presentation can be time consuming, because the user needs to decide on useful defaults for various settings every time a project is created. The reason for this template, then, is to streamline the user's workflow in getting from an idea to a presentation of that idea.
