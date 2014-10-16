@@ -4,7 +4,7 @@ subtitle    : Create presentations from R Studio
 author      : Matti
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight  # {highlight.js, prettify, highlight}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
@@ -15,7 +15,7 @@ knit        : slidify::knit2slides
 
 ---
 
-* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
+* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 > * Detailed instructions are in the [readme](readme) file of this repository.
 
@@ -29,7 +29,7 @@ knit        : slidify::knit2slides
 > library(slidify)
 > library(knitr)
 > opts_chunk$set(tidy = TRUE, results = "asis", message = FALSE, prompt = TRUE, 
-+     dev.args = list(bg = "transparent"))
++     dev.args = list(bg = "transparent"), dpi = 150, fig.align = "center")
 > options(xtable.comment = FALSE)  # xtable generates ugly comments by default
 ```
 
@@ -50,12 +50,12 @@ knit        : slidify::knit2slides
 
 <table border=1>
 <tr> <th> Var1 </th> <th> Freq </th>  </tr>
-  <tr> <td> A </td> <td align="right"> 139 </td> </tr>
-  <tr> <td> B </td> <td align="right">  38 </td> </tr>
-  <tr> <td> C </td> <td align="right">  53 </td> </tr>
+  <tr> <td> A </td> <td align="right"> 141 </td> </tr>
+  <tr> <td> B </td> <td align="right">  40 </td> </tr>
+  <tr> <td> C </td> <td align="right">  52 </td> </tr>
   <tr> <td> D </td> <td align="right">  78 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 246 </td> </tr>
-  <tr> <td> F </td> <td align="right">  55 </td> </tr>
+  <tr> <td> E </td> <td align="right"> 257 </td> </tr>
+  <tr> <td> F </td> <td align="right">  57 </td> </tr>
    </table>
 
 ---
@@ -64,7 +64,6 @@ knit        : slidify::knit2slides
 * After having obtained the counts, I want to sort and plot them.
 
 ```r
-> # Ordering data frames is unnecessarily complicated in R.
 > letters = letters[order(letters$Freq), ]
 > letters$Var1 = factor(letters$Var1, as.character(letters$Var1))
 > ggplot(letters, aes(Var1, Freq)) + geom_point(shape = 21, size = 3) + geom_line(aes(group = 1), 

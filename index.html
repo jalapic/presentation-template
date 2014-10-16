@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
-  <link rel="stylesheet" href="libraries/highlighters/highlight/css/tomorrow.css" />
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
@@ -54,7 +54,7 @@
 <slide class="" id="slide-2" style="background:;">
   <article data-timings="">
     <ul>
-<li>Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
+<li>Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.<br>
 &gt; * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 &gt; * Detailed instructions are in the <a href="readme">readme</a> file of this repository.</li>
 </ul>
@@ -74,7 +74,7 @@
 &gt; library(slidify)
 &gt; library(knitr)
 &gt; opts_chunk$set(tidy = TRUE, results = &quot;asis&quot;, message = FALSE, prompt = TRUE, 
-+     dev.args = list(bg = &quot;transparent&quot;))
++     dev.args = list(bg = &quot;transparent&quot;), dpi = 150, fig.align = &quot;center&quot;)
 &gt; options(xtable.comment = FALSE)  # xtable generates ugly comments by default
 </code></pre>
 
@@ -101,12 +101,12 @@
 
 <table border=1>
 <tr> <th> Var1 </th> <th> Freq </th>  </tr>
-  <tr> <td> A </td> <td align="right"> 139 </td> </tr>
-  <tr> <td> B </td> <td align="right">  38 </td> </tr>
-  <tr> <td> C </td> <td align="right">  53 </td> </tr>
+  <tr> <td> A </td> <td align="right"> 141 </td> </tr>
+  <tr> <td> B </td> <td align="right">  40 </td> </tr>
+  <tr> <td> C </td> <td align="right">  52 </td> </tr>
   <tr> <td> D </td> <td align="right">  78 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 246 </td> </tr>
-  <tr> <td> F </td> <td align="right">  55 </td> </tr>
+  <tr> <td> E </td> <td align="right"> 257 </td> </tr>
+  <tr> <td> F </td> <td align="right">  57 </td> </tr>
    </table>
 
   </article>
@@ -122,8 +122,7 @@
 <li>After having obtained the counts, I want to sort and plot them.</li>
 </ul>
 
-<pre><code class="r">&gt; # Ordering data frames is unnecessarily complicated in R.
-&gt; letters = letters[order(letters$Freq), ]
+<pre><code class="r">&gt; letters = letters[order(letters$Freq), ]
 &gt; letters$Var1 = factor(letters$Var1, as.character(letters$Var1))
 &gt; ggplot(letters, aes(Var1, Freq)) + geom_point(shape = 21, size = 3) + geom_line(aes(group = 1), 
 +     color = &quot;skyblue&quot;) + labs(x = &quot;&quot;, y = &quot;Frequency&quot;) + theme_bw() + theme(plot.background = element_rect(fill = &quot;transparent&quot;, 
@@ -208,5 +207,9 @@
 </body>
   <!-- Load Javascripts for Widgets -->
   
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
    
   </html>

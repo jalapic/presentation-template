@@ -4,7 +4,7 @@ subtitle    : Create presentations from R Studio
 author      : Matti
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight  # {highlight.js, prettify, highlight}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
@@ -15,7 +15,7 @@ knit        : slidify::knit2slides
 
 ---
 
-* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
+* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 > * Detailed instructions are in the [readme](readme) file of this repository.
 
@@ -26,7 +26,8 @@ knit        : slidify::knit2slides
 library(ggplot2); library(xtable); library(slidify)
 library(knitr)
 opts_chunk$set(tidy = TRUE, results = 'asis', message = FALSE, 
-               prompt = TRUE, dev.args=list(bg="transparent"))
+               prompt = TRUE, dev.args=list(bg="transparent"), dpi=150,
+               fig.align='center')
 options(xtable.comment = FALSE) # xtable generates ugly comments by default
 ```
 
@@ -47,8 +48,7 @@ print(xtable(head(letters)), type = "html", include.rownames=F, width=4)
 
 ## 4. Write a script in R Markdown
 * After having obtained the counts, I want to sort and plot them.
-```{r plotLetters, fig.height=2, fig.width=6, fig.align='center', dpi=150}
-# Ordering data frames is unnecessarily complicated in R.
+```{r plotLetters, fig.height=2, fig.width=6}
 letters = letters[order(letters$Freq),]
 letters$Var1 = factor(letters$Var1, as.character(letters$Var1))
 ggplot(letters, aes(Var1, Freq)) + geom_point(shape = 21, size = 3) +
