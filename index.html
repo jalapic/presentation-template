@@ -1,63 +1,70 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!DOCTYPE html>
+<html>
 <head>
-	<title>Presentation template</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=1274, user-scalable=no">
-	<meta name="description" content="Presentation template">
-	<meta name="author" content="Matti">
-	<meta name="generator" content="slidify" />
-	<!-- LOAD STYLE SHEETS -->
-	<link rel="stylesheet" href="libraries/frameworks/shower/themes/ribbon/styles/screen.css">
-	<link rel="stylesheet" media="print"
-	  href="libraries/frameworks/shower/themes/ribbon/styles/print.css">
-	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css">  <link rel="stylesheet" href = "assets/css/ribbons.css">
+  <title>Presentation template</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Presentation template">
+  <meta name="author" content="Matti">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
-	<!--
-		To apply styles to the certain slides
-		use slide ID to get needed elements
-		-->
-	<style>
-		#Cover h2 {
-      margin:65px 0 0;
-			color:#FFF;
-			text-align:center;
-			font-size:70px;
-			}
-		#FitToWidth h2,
-		#FitToHeight h2 {
-			color:#FFF;
-			text-align:center;
-			}
-	</style> 
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
 </head>
-<body class="list">
-  <header class="caption">
-  	<h1>Presentation template</h1>
-	</header>
-  <section class="slide " id="slide-1">
-  <div>
-    <h2></h2>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Presentation template</h1>
+    <h2>Create presentations from R Studio</h2>
+    <p>Matti<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
     <ul>
 <li>An example presentation, created in <a href="rstudio">R Studio</a>, with <a href="rmarkdown">R Markdown</a> and <a href="slidify">slidify</a>. View the source file <a href="source">here</a>.</li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-2">
-  <div>
-    <h2></h2>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <article data-timings="">
     <ul>
 <li>Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. 
 &gt; * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 &gt; * Detailed instructions are in the <a href="readme">readme</a> file of this repository.</li>
 </ul>
 
-  </div>
-</section>
-<section class="slide " id="slide-3">
-  <div>
-    <h2></h2>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
     <ul>
 <li>The first code block will load libraries, set options for chunks, xtable and so forth.</li>
 </ul>
@@ -71,11 +78,15 @@
 &gt; options(xtable.comment = FALSE)  # xtable generates ugly comments by default
 </code></pre>
 
-  </div>
-</section>
-<section class="slide " id="slide-4">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
     <h2>Write a script in R Markdown</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>Because this script is about itself, so is the data. I would like to know about the frequency of different letters in this script. </li>
 </ul>
@@ -98,11 +109,15 @@
   <tr> <td> F </td> <td align="right">  55 </td> </tr>
    </table>
 
-  </div>
-</section>
-<section class="slide " id="slide-5">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
     <h2>4. Write a script in R Markdown</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>After having obtained the counts, I want to sort and plot them.</li>
 </ul>
@@ -117,11 +132,15 @@
 
 <p><img src="assets/fig/plotLetters.png" title="plot of chunk plotLetters" alt="plot of chunk plotLetters" style="display: block; margin: auto;" /></p>
 
-  </div>
-</section>
-<section class="slide " id="slide-6">
-  <div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
     <h2>5. &quot;Compile&quot; the presentation</h2>
+  </hgroup>
+  <article data-timings="">
     <ul>
 <li>The next step is to create the presentation out of the R Markdown file. Slidify integrates well with Github, and creates a new branch in your github repository. This branch is actually that repository&#39;s website.</li>
 </ul>
@@ -135,18 +154,69 @@
 <li>It takes a few seconds for Github to refresh the page</li>
 </ul>
 
-  </div>
-</section>
-  <div class="progress">
-    <div></div>
-  </div>
-	<script src="libraries/frameworks/shower/shower.js"></script>
-	<!-- LOAD HIGHLIGHTER JS FILES -->
-	<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
-	 
-		<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
-	<!-- Photos by John Carey — fiftyfootshadows.net -->
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Write a script in R Markdown'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='4. Write a script in R Markdown'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='5. &quot;Compile&quot; the presentation'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
 </body>
-</html>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --> 
+  </html>

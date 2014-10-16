@@ -3,8 +3,8 @@ title       : Presentation template
 subtitle    : Create presentations from R Studio
 author      : Matti
 job         : 
-framework   : shower        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
