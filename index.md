@@ -13,9 +13,7 @@ knit        : slidify::knit2slides
 
 * An example presentation, created in [R Studio](rstudio), with [R Markdown](rmarkdown) and [slidify](slidify). View the source file [here](source).
 
----
-
-* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
+> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 > * Detailed instructions are in the [readme](readme) file of this repository.
 
@@ -50,12 +48,12 @@ knit        : slidify::knit2slides
 
 <table border=1>
 <tr> <th> Var1 </th> <th> Freq </th>  </tr>
-  <tr> <td> A </td> <td align="right"> 141 </td> </tr>
-  <tr> <td> B </td> <td align="right">  40 </td> </tr>
-  <tr> <td> C </td> <td align="right">  52 </td> </tr>
-  <tr> <td> D </td> <td align="right">  78 </td> </tr>
-  <tr> <td> E </td> <td align="right"> 257 </td> </tr>
-  <tr> <td> F </td> <td align="right">  57 </td> </tr>
+  <tr> <td> A </td> <td align="right"> 149 </td> </tr>
+  <tr> <td> B </td> <td align="right">  43 </td> </tr>
+  <tr> <td> C </td> <td align="right">  57 </td> </tr>
+  <tr> <td> D </td> <td align="right">  79 </td> </tr>
+  <tr> <td> E </td> <td align="right"> 277 </td> </tr>
+  <tr> <td> F </td> <td align="right">  58 </td> </tr>
    </table>
 
 ---
@@ -71,7 +69,7 @@ knit        : slidify::knit2slides
 +     color = "transparent"))
 ```
 
-<img src="assets/fig/plotLetters.png" title="plot of chunk plotLetters" alt="plot of chunk plotLetters" style="display: block; margin: auto;" />
+![plot of chunk plotLetters](assets/fig/plotLetters.png) 
 
 ---
 
@@ -83,12 +81,14 @@ knit        : slidify::knit2slides
 > publish_github("presentation-template", "mvuorre")
 ```
 
-* You can now access the presentation at [http://mvuorre.github.io/presentation-template/](http://mvuorre.github.io/presentation-template/)
-* It takes a few seconds for Github to refresh the page
+> * You can now access the presentation at [http://mvuorre.github.io/presentation-template/](http://mvuorre.github.io/presentation-template/)
+> * It takes a few seconds for Github to refresh the page
+> * The source code for the presentation is [here](source)
+> * Note that the presentation is in the gh-pages branch on Github, not the master branch
 
 
 [rstudio]: http://www.rstudio.com/
 [rmarkdown]: http://rmarkdown.rstudio.com/
 [slidify]: http://slidify.github.io/
 [source]: http://mvuorre.github.io/presentation-template/presentation/index.Rmd
-[readme]: https://github.com/mvuorre/presentation-template
+[readme]: https://github.com/mvuorre/presentation-template/tree/gh-pages

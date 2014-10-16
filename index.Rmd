@@ -13,9 +13,7 @@ knit        : slidify::knit2slides
 
 * An example presentation, created in [R Studio](rstudio), with [R Markdown](rmarkdown) and [slidify](slidify). View the source file [here](source).
 
----
-
-* Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
+> * Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify.  
 > * This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.
 > * Detailed instructions are in the [readme](readme) file of this repository.
 
@@ -51,9 +49,9 @@ print(xtable(head(letters)), type = "html", include.rownames=F, width=4)
 ```{r plotLetters, fig.height=2, fig.width=6}
 letters = letters[order(letters$Freq),]
 letters$Var1 = factor(letters$Var1, as.character(letters$Var1))
-ggplot(letters, aes(Var1, Freq)) + geom_point(shape = 21, size = 3) +
-    geom_line(aes(group=1), color = 'skyblue') +
-    labs(x = "", y = "Frequency") + theme_bw() +
+ggplot(letters, aes(Var1, Freq)) + geom_point(shape = 21, size = 3) +  
+    geom_line(aes(group=1), color = 'skyblue') +  
+    labs(x = "", y = "Frequency") + theme_bw() +  
     theme(plot.background = element_rect(fill = "transparent", color = "transparent"))
 ```
 
@@ -66,12 +64,14 @@ slidify("index.Rmd")
 publish_github("presentation-template", "mvuorre")
 ```
 
-* You can now access the presentation at [http://mvuorre.github.io/presentation-template/](http://mvuorre.github.io/presentation-template/)
-* It takes a few seconds for Github to refresh the page
+> * You can now access the presentation at [http://mvuorre.github.io/presentation-template/](http://mvuorre.github.io/presentation-template/)
+> * It takes a few seconds for Github to refresh the page
+> * The source code for the presentation is [here](source)
+> * Note that the presentation is in the gh-pages branch on Github, not the master branch
 
 
 [rstudio]: http://www.rstudio.com/
 [rmarkdown]: http://rmarkdown.rstudio.com/
 [slidify]: http://slidify.github.io/
 [source]: http://mvuorre.github.io/presentation-template/presentation/index.Rmd
-[readme]: https://github.com/mvuorre/presentation-template
+[readme]: https://github.com/mvuorre/presentation-template/tree/gh-pages
