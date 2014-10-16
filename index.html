@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Presentation template</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Presentation template">
+  <meta name="author" content="Matti">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Presentation template</h1>
+    <h2>Create presentations from R Studio</h2>
+    <p>Matti<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <ul>
+<li>An example presentation, created in [R Studio][rstudio], with [R Markdown][rmarkdown] and [slidify][slidify]. View the source file [here][source].</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <article data-timings="">
+    <ul>
+<li>The first code block will load libraries, set options for chunks, xtable and so forth.</li>
+</ul>
+
+<pre><code class="r">&gt; library(ggplot2)
+&gt; library(xtable)
+&gt; library(slidify)
+&gt; library(knitr)
+&gt; opts_chunk$set(tidy = TRUE, results = &quot;asis&quot;, message = FALSE, prompt = TRUE, 
++     dev.args = list(bg = &quot;transparent&quot;))
+&gt; options(xtable.comment = FALSE)  # xtable generates ugly comments by default
+</code></pre>
+
+<ul class = "build incremental">
+<li>Clone this repository for easy authoring of presentations from R Studio, using R Markdown, knitr and slidify. </li>
+<li>This slideshow is an example of what the resulting slideshow will look like, and the source index.Rmd file serves as a useful template with (hopefully) good defaults for various settings.</li>
+<li>Detailed instructions are in the readme file of this repository.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Write a script in R Markdown</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Because this script is about itself, so is the data. I would like to know about the frequency of different letters in this script. </li>
+</ul>
+
+<pre><code class="r">&gt; con = file(&quot;index.Rmd&quot;, open = &quot;r&quot;)
+&gt; letters = toupper(unlist(strsplit(readLines(con), &quot;&quot;)))
+&gt; close(con)
+&gt; letters = as.data.frame(table(gsub(&quot;[[:punct:], [:blank:], [:digit:]]&quot;, replacement = &quot;&quot;, 
++     letters)))[-1, ]
+&gt; print(xtable(head(letters)), type = &quot;html&quot;, include.rownames = F, width = 4)
+</code></pre>
+
+<table border=1>
+<tr> <th> Var1 </th> <th> Freq </th>  </tr>
+  <tr> <td> A </td> <td align="right"> 139 </td> </tr>
+  <tr> <td> B </td> <td align="right">  38 </td> </tr>
+  <tr> <td> C </td> <td align="right">  53 </td> </tr>
+  <tr> <td> D </td> <td align="right">  78 </td> </tr>
+  <tr> <td> E </td> <td align="right"> 246 </td> </tr>
+  <tr> <td> F </td> <td align="right">  55 </td> </tr>
+   </table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>4. Write a script in R Markdown</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>After having obtained the counts, I want to sort and plot them.</li>
+</ul>
+
+<pre><code class="r">&gt; # Ordering data frames is unnecessarily complicated in R.
+&gt; letters = letters[order(letters$Freq), ]
+&gt; letters$Var1 = factor(letters$Var1, as.character(letters$Var1))
+&gt; ggplot(letters, aes(Var1, Freq)) + geom_point(shape = 21, size = 3) + geom_line(aes(group = 1), 
++     color = &quot;skyblue&quot;) + labs(x = &quot;&quot;, y = &quot;Frequency&quot;) + theme_bw() + theme(plot.background = element_rect(fill = &quot;transparent&quot;, 
++     color = &quot;transparent&quot;))
+</code></pre>
+
+<p><img src="assets/fig/plotLetters.png" title="plot of chunk plotLetters" alt="plot of chunk plotLetters" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>5. &quot;Compile&quot; the presentation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The next step is to create the presentation out of the R Markdown file. Slidify integrates well with Github, and creates a new branch in your github repository. This branch is actually that repository&#39;s website.</li>
+</ul>
+
+<pre><code class="r">&gt; slidify(&quot;index.Rmd&quot;)
+&gt; publish_github(&quot;presentation-template&quot;, &quot;mvuorre&quot;)
+</code></pre>
+
+<ul>
+<li>You can now access the presentation at <a href="http://mvuorre.github.io/presentation-template/">http://mvuorre.github.io/presentation-template/</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Write a script in R Markdown'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='4. Write a script in R Markdown'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='5. &quot;Compile&quot; the presentation'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
